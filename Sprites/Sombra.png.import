@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6b4u7sls73xi"
-path="res://.godot/imported/Rueda trasera.png-3998261869db9f1260ead3fc479d190a.ctex"
+uid="uid://yxxjb46ddsyr"
+path="res://.godot/imported/Sombra.png-952503ec32452ab9c346915b1a1024b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rueda trasera.png"
-dest_files=["res://.godot/imported/Rueda trasera.png-3998261869db9f1260ead3fc479d190a.ctex"]
+source_file="res://Sprites/Sombra.png"
+dest_files=["res://.godot/imported/Sombra.png-952503ec32452ab9c346915b1a1024b7.ctex"]
 
 [params]
 

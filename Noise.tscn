@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3pscl2fldgud"]
+
+[ext_resource type="Shader" uid="uid://deohq06vci8pk" path="res://Noise.gdshader" id="1_6k3g4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_557ut"]
+shader = ExtResource("1_6k3g4")
+shader_parameter/strength = 0.1
+shader_parameter/speed = 2.0
+
+[node name="Noise" type="CanvasLayer" unique_id=1963428562]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1986373829]
+material = SubResource("ShaderMaterial_557ut")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -2,16 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://crt2751uprn8b" path="res://Player.tscn" id="1_njov2"]
 [ext_resource type="Texture2D" uid="uid://b7x7edk6yyuft" path="res://icon.svg" id="2_2au82"]
+[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://CameraShake.gd" id="2_8tn2x"]
+[ext_resource type="PackedScene" uid="uid://3pscl2fldgud" path="res://Noise.tscn" id="3_2au82"]
 
-[node name="Node2D" type="Node2D" unique_id=447278991]
+[node name="Test" type="Node2D" unique_id=447278991]
 
 [node name="Player" parent="." unique_id=1996022323 instance=ExtResource("1_njov2")]
 position = Vector2(511, 275)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1185464213]
+script = ExtResource("2_8tn2x")
+shake_strength = 0.07
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1916039431]
 z_index = -3
 position = Vector2(500, 250)
 scale = Vector2(4.89, 4.89)
 texture = ExtResource("2_2au82")
+
+[node name="Noise" parent="." unique_id=1963428562 instance=ExtResource("3_2au82")]
