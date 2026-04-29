@@ -15,6 +15,11 @@ run/main_scene="res://Player.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+
 [input]
 
 push={
@@ -29,4 +34,5 @@ push={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
