@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://domxo0xwv002v"
-path="res://.godot/imported/Rueda delantera.png-aaecc414f218a3ea5542623a8b326fea.ctex"
+uid="uid://c2ns5cb2obxrn"
+path="res://.godot/imported/BrazoI 3.png-c92e7a19c263cc588b648137e9f9efa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rueda delantera.png"
-dest_files=["res://.godot/imported/Rueda delantera.png-aaecc414f218a3ea5542623a8b326fea.ctex"]
+source_file="res://Sprites/Brazos/Izquierdo/BrazoI 3.png"
+dest_files=["res://.godot/imported/BrazoI 3.png-c92e7a19c263cc588b648137e9f9efa7.ctex"]
 
 [params]
 

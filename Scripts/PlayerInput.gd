@@ -15,7 +15,6 @@ func _ready():
 
 
 func _input(event):
-	# 🟢 CLICK
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if is_mouse_inside_input_area():
@@ -24,12 +23,10 @@ func _input(event):
 		else:
 			dragging = false
 
-	# 🔴 CORTE SI SALE DEL ÁREA
 	if dragging and not is_mouse_inside_input_area():
 		dragging = false
 		return
 
-	# 🟡 MOVIMIENTO
 	if event is InputEventMouseMotion and dragging:
 		var current_mouse = player.get_global_mouse_position()
 		var delta = current_mouse - last_mouse_pos
@@ -59,7 +56,6 @@ func apply_gesture(delta: Vector2):
 	if delta.length() < 1:
 		return
 
-	# ✅ CORREGIDO: ya NO invertido
 	var gesture_dir = delta.normalized()
 
 	var forward = Vector2.UP.rotated(player.rotation)

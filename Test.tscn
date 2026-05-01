@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bvh32folc0ubi"]
 
-[ext_resource type="PackedScene" uid="uid://crt2751uprn8b" path="res://Player.tscn" id="1_njov2"]
+[ext_resource type="PackedScene" uid="uid://crt2751uprn8b" path="res://Prefabs/Player.tscn" id="1_njov2"]
 [ext_resource type="Texture2D" uid="uid://b7x7edk6yyuft" path="res://icon.svg" id="2_2au82"]
-[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://CameraShake.gd" id="2_8tn2x"]
-[ext_resource type="PackedScene" uid="uid://3pscl2fldgud" path="res://Noise.tscn" id="3_2au82"]
+[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://Scripts/CameraShake.gd" id="2_8tn2x"]
+[ext_resource type="PackedScene" uid="uid://3pscl2fldgud" path="res://Prefabs/Noise.tscn" id="3_2au82"]
 
 [node name="Test" type="Node2D" unique_id=447278991]
 

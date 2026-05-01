@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhsks1xoncjeo"
-path="res://.godot/imported/Ruedas.png-0585da997ea981729553ab2d0e7936e9.ctex"
+uid="uid://igsfxds3ivvg"
+path="res://.godot/imported/Cuerpo.png-f5b714c9e7c84e64f471f4230af3ef6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ruedas.png"
-dest_files=["res://.godot/imported/Ruedas.png-0585da997ea981729553ab2d0e7936e9.ctex"]
+source_file="res://Sprites/Cuerpo.png"
+dest_files=["res://.godot/imported/Cuerpo.png-f5b714c9e7c84e64f471f4230af3ef6a.ctex"]
 
 [params]
 
