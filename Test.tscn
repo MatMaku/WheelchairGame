@@ -1,23 +1,35 @@
 [gd_scene format=3 uid="uid://bvh32folc0ubi"]
 
-[ext_resource type="PackedScene" uid="uid://crt2751uprn8b" path="res://Prefabs/Player.tscn" id="1_njov2"]
 [ext_resource type="Texture2D" uid="uid://b7x7edk6yyuft" path="res://icon.svg" id="2_2au82"]
-[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://Scripts/CameraShake.gd" id="2_8tn2x"]
 [ext_resource type="PackedScene" uid="uid://3pscl2fldgud" path="res://Prefabs/Noise.tscn" id="3_2au82"]
+[ext_resource type="PackedScene" uid="uid://wqah66tuporn" path="res://Prefabs/Player.tscn" id="3_8tn2x"]
+[ext_resource type="PackedScene" uid="uid://bknx4mq30q2cw" path="res://Prefabs/Ramp.tscn" id="4_8tn2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2au82"]
+size = Vector2(200, 200)
 
 [node name="Test" type="Node2D" unique_id=447278991]
 
-[node name="Player" parent="." unique_id=1996022323 instance=ExtResource("1_njov2")]
-position = Vector2(511, 275)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1185464213]
-script = ExtResource("2_8tn2x")
-shake_strength = 0.07
+[node name="Player" parent="." unique_id=610006283 instance=ExtResource("3_8tn2x")]
+position = Vector2(429, 189)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1916039431]
-z_index = -3
+z_index = -4
 position = Vector2(500, 250)
 scale = Vector2(4.89, 4.89)
 texture = ExtResource("2_2au82")
 
 [node name="Noise" parent="." unique_id=1963428562 instance=ExtResource("3_2au82")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1453478932]
+position = Vector2(644, 537)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=615582638]
+shape = SubResource("RectangleShape2D_2au82")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1450709809]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_2au82")
+
+[node name="Ramp" parent="." unique_id=545069195 instance=ExtResource("4_8tn2x")]
+position = Vector2(501, -70)

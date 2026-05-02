@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bja3w7no56i4r"
-path="res://.godot/imported/Cuerpo.png-f5b714c9e7c84e64f471f4230af3ef6a.ctex"
+uid="uid://cttw3uv6y78fh"
+path="res://.godot/imported/Pose escopeta.png-e5ebee4f2865033266c99d79222587b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cuerpo.png"
-dest_files=["res://.godot/imported/Cuerpo.png-f5b714c9e7c84e64f471f4230af3ef6a.ctex"]
+source_file="res://Sprites/Escopeta/Pose escopeta.png"
+dest_files=["res://.godot/imported/Pose escopeta.png-e5ebee4f2865033266c99d79222587b4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bja3w7no56i4r"
-path="res://.godot/imported/Cuerpo.png-f5b714c9e7c84e64f471f4230af3ef6a.ctex"
+uid="uid://d2dyxfvlpotin"
+path="res://.godot/imported/Muzzle flash.png-ebac317d9bb48c1090089b01404f3e6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cuerpo.png"
-dest_files=["res://.godot/imported/Cuerpo.png-f5b714c9e7c84e64f471f4230af3ef6a.ctex"]
+source_file="res://Sprites/Muzzle flash.png"
+dest_files=["res://.godot/imported/Muzzle flash.png-ebac317d9bb48c1090089b01404f3e6a.ctex"]
 
 [params]
 

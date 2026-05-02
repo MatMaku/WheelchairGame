@@ -1,166 +1,244 @@
-[gd_scene format=3 uid="uid://crt2751uprn8b"]
+[gd_scene format=3 uid="uid://wqah66tuporn"]
 
-[ext_resource type="Script" uid="uid://82yo8pgmuljr" path="res://Scripts/PlayerPhysics.gd" id="1_kne1u"]
-[ext_resource type="Script" uid="uid://bwrgpeqotiqxo" path="res://Scripts/PlayerInput.gd" id="2_e80uo"]
-[ext_resource type="Texture2D" uid="uid://bspsfegjx2gst" path="res://Sprites/Chasis.png" id="3_kne1u"]
-[ext_resource type="Script" uid="uid://drodctgb3kl5d" path="res://Scripts/WheelController.gd" id="4_5ncpa"]
-[ext_resource type="Texture2D" uid="uid://bhsks1xoncjeo" path="res://Sprites/Ruedas/Ruedas.png" id="4_e80uo"]
-[ext_resource type="Texture2D" uid="uid://yxxjb46ddsyr" path="res://Sprites/Sombra.png" id="4_wi0c6"]
-[ext_resource type="Shader" uid="uid://ddpe54b6au5r3" path="res://Shaders/Wheel.gdshader" id="5_dtqjt"]
-[ext_resource type="Texture2D" uid="uid://igsfxds3ivvg" path="res://Sprites/Cuerpo.png" id="5_k2qb3"]
-[ext_resource type="Texture2D" uid="uid://domxo0xwv002v" path="res://Sprites/Ruedas/Rueda delantera.png" id="6_5ncpa"]
-[ext_resource type="Texture2D" uid="uid://lnhlefi207jv" path="res://Sprites/Cabeza.png" id="6_wuv02"]
-[ext_resource type="Texture2D" uid="uid://b6b4u7sls73xi" path="res://Sprites/Ruedas/Rueda trasera.png" id="7_wi0c6"]
-[ext_resource type="Script" uid="uid://drir7fjgbs0af" path="res://Prefabs/ArmAnimator.gd" id="12_t7w7j"]
-[ext_resource type="Texture2D" uid="uid://carouk68yphmy" path="res://Sprites/Brazos/Derecho/BrazoD.png" id="13_08l6w"]
-[ext_resource type="Texture2D" uid="uid://cxcfuxf2jdr1n" path="res://Sprites/Brazos/Izquierdo/BrazoI 1.png" id="14_bhh4y"]
-[ext_resource type="Texture2D" uid="uid://2681pa7rvhb4" path="res://Sprites/Brazos/Izquierdo/BrazoI.png" id="14_o7xy3"]
-[ext_resource type="Texture2D" uid="uid://bydy74d8iamuw" path="res://Sprites/Brazos/Izquierdo/BrazoI 2.png" id="15_q46ve"]
-[ext_resource type="Texture2D" uid="uid://c2ns5cb2obxrn" path="res://Sprites/Brazos/Izquierdo/BrazoI 3.png" id="16_53vlf"]
-[ext_resource type="Texture2D" uid="uid://dfajdn86kgaxh" path="res://Sprites/Brazos/Izquierdo/BrazoI 4.png" id="17_fuy0y"]
-[ext_resource type="Texture2D" uid="uid://heww6n4h0usf" path="res://Sprites/Brazos/Derecho/BrazoD 1.png" id="19_gy83n"]
-[ext_resource type="Texture2D" uid="uid://65t4fofx6uyy" path="res://Sprites/Brazos/Derecho/BrazoD 2.png" id="20_2wlbw"]
-[ext_resource type="Texture2D" uid="uid://ckruief7wwxtg" path="res://Sprites/Brazos/Derecho/BrazoD 3.png" id="21_406my"]
-[ext_resource type="Texture2D" uid="uid://b0d5g1hgx8ugk" path="res://Sprites/Brazos/Derecho/BrazoD 4.png" id="22_fd4tb"]
+[ext_resource type="Script" uid="uid://du68eixt2joti" path="res://Scripts/Physics.gd" id="1_aiqfs"]
+[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://Scripts/CameraShake.gd" id="2_oaevx"]
+[ext_resource type="Script" uid="uid://bwrgpeqotiqxo" path="res://Scripts/PlayerInput.gd" id="3_r63k2"]
+[ext_resource type="Script" uid="uid://bcotb6fnnn7fn" path="res://Scripts/ShootingManager.gd" id="4_ydufb"]
+[ext_resource type="PackedScene" uid="uid://br361hnwj326f" path="res://Prefabs/PelletTrail.tscn" id="5_cyxkj"]
+[ext_resource type="PackedScene" uid="uid://3uepbpmtegy5" path="res://Prefabs/Smoke.tscn" id="6_1nmkr"]
+[ext_resource type="Script" uid="uid://drir7fjgbs0af" path="res://Scripts/Animator.gd" id="7_lx8ag"]
+[ext_resource type="Texture2D" uid="uid://2681pa7rvhb4" path="res://Sprites/Brazos/Izquierdo/BrazoI.png" id="8_7rfsf"]
+[ext_resource type="Texture2D" uid="uid://cxcfuxf2jdr1n" path="res://Sprites/Brazos/Izquierdo/BrazoI 1.png" id="9_6adx8"]
+[ext_resource type="Texture2D" uid="uid://bydy74d8iamuw" path="res://Sprites/Brazos/Izquierdo/BrazoI 2.png" id="10_ih8db"]
+[ext_resource type="Texture2D" uid="uid://c2ns5cb2obxrn" path="res://Sprites/Brazos/Izquierdo/BrazoI 3.png" id="11_jlvla"]
+[ext_resource type="Texture2D" uid="uid://dfajdn86kgaxh" path="res://Sprites/Brazos/Izquierdo/BrazoI 4.png" id="12_aacim"]
+[ext_resource type="Texture2D" uid="uid://carouk68yphmy" path="res://Sprites/Brazos/Derecho/BrazoD.png" id="13_whi3v"]
+[ext_resource type="Texture2D" uid="uid://heww6n4h0usf" path="res://Sprites/Brazos/Derecho/BrazoD 1.png" id="14_fe66y"]
+[ext_resource type="Texture2D" uid="uid://65t4fofx6uyy" path="res://Sprites/Brazos/Derecho/BrazoD 2.png" id="15_bp2ap"]
+[ext_resource type="Texture2D" uid="uid://ckruief7wwxtg" path="res://Sprites/Brazos/Derecho/BrazoD 3.png" id="16_hq3ys"]
+[ext_resource type="Texture2D" uid="uid://b0d5g1hgx8ugk" path="res://Sprites/Brazos/Derecho/BrazoD 4.png" id="17_pnvvr"]
+[ext_resource type="Texture2D" uid="uid://bspsfegjx2gst" path="res://Sprites/Chasis.png" id="18_vukrh"]
+[ext_resource type="Texture2D" uid="uid://yxxjb46ddsyr" path="res://Sprites/Sombra.png" id="19_q58bx"]
+[ext_resource type="Script" uid="uid://drodctgb3kl5d" path="res://Scripts/WheelController.gd" id="20_gvgvh"]
+[ext_resource type="Texture2D" uid="uid://bhsks1xoncjeo" path="res://Sprites/Ruedas/Ruedas.png" id="21_15tmr"]
+[ext_resource type="Shader" uid="uid://ddpe54b6au5r3" path="res://Shaders/Wheel.gdshader" id="22_grebm"]
+[ext_resource type="Texture2D" uid="uid://domxo0xwv002v" path="res://Sprites/Ruedas/Rueda delantera.png" id="23_l3br1"]
+[ext_resource type="Texture2D" uid="uid://b6b4u7sls73xi" path="res://Sprites/Ruedas/Rueda trasera.png" id="24_s4q4h"]
+[ext_resource type="Texture2D" uid="uid://bja3w7no56i4r" path="res://Sprites/Cuerpo.png" id="25_cpsd3"]
+[ext_resource type="Texture2D" uid="uid://lnhlefi207jv" path="res://Sprites/Cabeza.png" id="26_ut812"]
+[ext_resource type="Texture2D" uid="uid://b637hs1a7j14h" path="res://Sprites/Escopeta/Escopeta.png" id="27_6aaad"]
+[ext_resource type="Texture2D" uid="uid://b223jftjhbxw" path="res://Sprites/Escopeta/Piernas escopeta.png" id="28_6q07v"]
+[ext_resource type="Texture2D" uid="uid://cttw3uv6y78fh" path="res://Sprites/Escopeta/Pose escopeta.png" id="29_gyxu7"]
+[ext_resource type="Texture2D" uid="uid://d2dyxfvlpotin" path="res://Sprites/Muzzle flash.png" id="30_evfkh"]
+[ext_resource type="Script" uid="uid://dq2jo656lx0yw" path="res://Scripts/MuzzleFlash.gd" id="31_2m8qq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
-size = Vector2(90, 130)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0rpr"]
+size = Vector2(90, 120)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
-radius = 115.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_g012e"]
+radius = 250.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hp6x6"]
-shader = ExtResource("5_dtqjt")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oe0ta"]
+shader = ExtResource("22_grebm")
 shader_parameter/offset = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ncpa"]
-shader = ExtResource("5_dtqjt")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8532"]
+shader = ExtResource("22_grebm")
 shader_parameter/offset = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi0c6"]
-shader = ExtResource("5_dtqjt")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aeuoo"]
+shader = ExtResource("22_grebm")
 shader_parameter/offset = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3tkgg"]
-shader = ExtResource("5_dtqjt")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpof2"]
+shader = ExtResource("22_grebm")
 shader_parameter/offset = 0.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1996022323]
-script = ExtResource("1_kne1u")
-forward_friction = 1.5
+[node name="Player" type="RigidBody2D" unique_id=610006283]
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource("1_aiqfs")
+forward_friction = 0.0
 
-[node name="PlayerInput" type="Node" parent="." unique_id=2093987036]
-script = ExtResource("2_e80uo")
-push_strength = 500.0
-turn_strength = 0.1
+[node name="MainCamera" type="Camera2D" parent="." unique_id=2135051937]
+script = ExtResource("2_oaevx")
+shake_strength = 0.1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=906221652]
+[node name="PlayerInput" type="Node" parent="." unique_id=1314738972]
+script = ExtResource("3_r63k2")
+push_strength = 800.0
+turn_strength = 150.0
+
+[node name="ShootingManager" type="Node" parent="." unique_id=948230773 node_paths=PackedStringArray("player", "player_input", "muzzle", "muzzle_flash", "animator")]
+script = ExtResource("4_ydufb")
+player = NodePath("..")
+player_input = NodePath("../PlayerInput")
+muzzle = NodePath("../Sprites/Apuntando/Cuerpo/ShootPoint")
+muzzle_flash = NodePath("../Sprites/Apuntando/Cuerpo/MuzzleFlash")
+animator = NodePath("../Sprites")
+pellet_count = 6
+spread_angle = 10.0
+recoil_force = 1000.0
+trail_scene = ExtResource("5_cyxkj")
+smoke_scene = ExtResource("6_1nmkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014843013]
 visible = false
-shape = SubResource("RectangleShape2D_kpjcp")
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_w0rpr")
 
-[node name="InputArea" type="Area2D" parent="." unique_id=1984691576]
+[node name="InputArea" type="Area2D" parent="." unique_id=1967357895]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea" unique_id=857475014]
-shape = SubResource("CircleShape2D_kpjcp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputArea" unique_id=1456471181]
+shape = SubResource("CircleShape2D_g012e")
 
-[node name="Sprites" type="Node2D" parent="." unique_id=1369128535]
+[node name="Sprites" type="Node2D" parent="." unique_id=286789195 node_paths=PackedStringArray("player", "input_area", "player_input", "movement_visuals", "aim_visuals", "left_arm", "right_arm", "torso_aim", "cuerpo_sprite")]
+script = ExtResource("7_lx8ag")
+player = NodePath("..")
+input_area = NodePath("../InputArea")
+player_input = NodePath("../PlayerInput")
+movement_visuals = NodePath("Movimiento")
+aim_visuals = NodePath("Apuntando")
+left_arm = NodePath("Movimiento/Brazos/Brazo I")
+right_arm = NodePath("Movimiento/Brazos/Brazo D")
+left_frames = Array[Texture2D]([ExtResource("8_7rfsf"), ExtResource("9_6adx8"), ExtResource("10_ih8db"), ExtResource("11_jlvla"), ExtResource("12_aacim")])
+right_frames = Array[Texture2D]([ExtResource("13_whi3v"), ExtResource("14_fe66y"), ExtResource("15_bp2ap"), ExtResource("16_hq3ys"), ExtResource("17_pnvvr")])
+torso_aim = NodePath("Apuntando/Cuerpo")
+cuerpo_sprite = NodePath("Apuntando/Cuerpo")
+recoil_distance = 15.0
+recoil_speed = 10.0
 
-[node name="Chasis" type="Sprite2D" parent="Sprites" unique_id=631448464]
+[node name="Chasis" type="Sprite2D" parent="Sprites" unique_id=364317758]
 z_index = 1
 texture_filter = 1
 rotation = -3.1415925
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_kne1u")
+texture = ExtResource("18_vukrh")
 
-[node name="Sombra" type="Sprite2D" parent="Sprites" unique_id=1744949843]
+[node name="Sombra" type="Sprite2D" parent="Sprites" unique_id=1443011656]
 z_index = -2
 texture_filter = 1
-scale = Vector2(0.18499999, 0.18499999)
-texture = ExtResource("4_wi0c6")
+scale = Vector2(0.15, 0.19)
+texture = ExtResource("19_q58bx")
 
-[node name="Cuerpo" type="Sprite2D" parent="Sprites" unique_id=763950650]
+[node name="Ruedas" type="Node2D" parent="Sprites" unique_id=1482164379 node_paths=PackedStringArray("player", "left_wheels", "right_wheels")]
+script = ExtResource("20_gvgvh")
+player = NodePath("../..")
+left_wheels = [NodePath("DIzq"), NodePath("AIzq")]
+right_wheels = [NodePath("DDer"), NodePath("ADer")]
+
+[node name="Contornos" type="Sprite2D" parent="Sprites/Ruedas" unique_id=273491137]
+texture_filter = 1
+rotation = -3.1415925
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("21_15tmr")
+
+[node name="DIzq" type="Sprite2D" parent="Sprites/Ruedas" unique_id=2021375873]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_oe0ta")
+position = Vector2(-37.36, -42.575)
+scale = Vector2(0.326, 0.3)
+texture = ExtResource("23_l3br1")
+
+[node name="DDer" type="Sprite2D" parent="Sprites/Ruedas" unique_id=1547080918]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c8532")
+position = Vector2(38.255, -42.575)
+scale = Vector2(0.326, 0.3)
+texture = ExtResource("23_l3br1")
+
+[node name="AIzq" type="Sprite2D" parent="Sprites/Ruedas" unique_id=1625408023]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_aeuoo")
+position = Vector2(-40.055, 13)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("24_s4q4h")
+
+[node name="ADer" type="Sprite2D" parent="Sprites/Ruedas" unique_id=198689985]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kpof2")
+position = Vector2(40.64, 13)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("24_s4q4h")
+
+[node name="Movimiento" type="Node2D" parent="Sprites" unique_id=560991851]
+
+[node name="Cuerpo" type="Sprite2D" parent="Sprites/Movimiento" unique_id=1061972816]
 z_index = 1
 texture_filter = 1
 rotation = -3.1415925
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_k2qb3")
+texture = ExtResource("25_cpsd3")
 
-[node name="Cabeza" type="Sprite2D" parent="Sprites" unique_id=1971309265]
+[node name="Cabeza" type="Sprite2D" parent="Sprites/Movimiento" unique_id=1624061716]
 z_index = 1
 texture_filter = 1
 position = Vector2(0, 27.000002)
 rotation = -3.1415925
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_wuv02")
+texture = ExtResource("26_ut812")
 
-[node name="Ruedas" type="Node2D" parent="Sprites" unique_id=1793292684 node_paths=PackedStringArray("player", "left_wheels", "right_wheels")]
-script = ExtResource("4_5ncpa")
-player = NodePath("../..")
-left_wheels = [NodePath("DIzq"), NodePath("AIzq")]
-right_wheels = [NodePath("DDer"), NodePath("ADer")]
-
-[node name="Contornos" type="Sprite2D" parent="Sprites/Ruedas" unique_id=773222486]
+[node name="Escopeta sola" type="Sprite2D" parent="Sprites/Movimiento" unique_id=1256520011]
+z_index = 1
 texture_filter = 1
-rotation = -3.1415925
+position = Vector2(3.0000024, -6)
+rotation = 2.4296274
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_e80uo")
+texture = ExtResource("27_6aaad")
 
-[node name="DIzq" type="Sprite2D" parent="Sprites/Ruedas" unique_id=711211041]
-z_index = -1
-texture_filter = 1
-texture_repeat = 2
-material = SubResource("ShaderMaterial_hp6x6")
-position = Vector2(-37.36, -42.575)
-scale = Vector2(0.326, 0.3)
-texture = ExtResource("6_5ncpa")
+[node name="Brazos" type="Node2D" parent="Sprites/Movimiento" unique_id=1138905190]
 
-[node name="DDer" type="Sprite2D" parent="Sprites/Ruedas" unique_id=1345380928]
-z_index = -1
-texture_filter = 1
-texture_repeat = 2
-material = SubResource("ShaderMaterial_5ncpa")
-position = Vector2(38.255, -42.575)
-scale = Vector2(0.326, 0.3)
-texture = ExtResource("6_5ncpa")
-
-[node name="AIzq" type="Sprite2D" parent="Sprites/Ruedas" unique_id=652556223]
-z_index = -1
-texture_filter = 1
-texture_repeat = 2
-material = SubResource("ShaderMaterial_wi0c6")
-position = Vector2(-40.055, 13)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_wi0c6")
-
-[node name="ADer" type="Sprite2D" parent="Sprites/Ruedas" unique_id=306722126]
-z_index = -1
-texture_filter = 1
-texture_repeat = 2
-material = SubResource("ShaderMaterial_3tkgg")
-position = Vector2(40.64, 13)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_wi0c6")
-
-[node name="Brazos" type="Node2D" parent="Sprites" unique_id=1082411077 node_paths=PackedStringArray("player", "input_area", "left_arm", "right_arm")]
-script = ExtResource("12_t7w7j")
-player = NodePath("../..")
-input_area = NodePath("../../InputArea")
-left_arm = NodePath("Brazo I")
-right_arm = NodePath("Brazo D")
-left_frames = Array[Texture2D]([ExtResource("14_o7xy3"), ExtResource("14_bhh4y"), ExtResource("15_q46ve"), ExtResource("16_53vlf"), ExtResource("17_fuy0y")])
-right_frames = Array[Texture2D]([ExtResource("13_08l6w"), ExtResource("19_gy83n"), ExtResource("20_2wlbw"), ExtResource("21_406my"), ExtResource("22_fd4tb")])
-
-[node name="Brazo D" type="Sprite2D" parent="Sprites/Brazos" unique_id=1809157357]
+[node name="Brazo I" type="Sprite2D" parent="Sprites/Movimiento/Brazos" unique_id=367253920]
 z_index = 1
 texture_filter = 1
 rotation = -3.1415925
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("13_08l6w")
+texture = ExtResource("8_7rfsf")
 
-[node name="Brazo I" type="Sprite2D" parent="Sprites/Brazos" unique_id=1841279301]
+[node name="Brazo D" type="Sprite2D" parent="Sprites/Movimiento/Brazos" unique_id=1867554823]
 z_index = 1
 texture_filter = 1
 rotation = -3.1415925
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("14_o7xy3")
+texture = ExtResource("13_whi3v")
+
+[node name="Apuntando" type="Node2D" parent="Sprites" unique_id=1864095021]
+visible = false
+
+[node name="Piernas" type="Sprite2D" parent="Sprites/Apuntando" unique_id=208277780]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 12)
+rotation = -3.1415925
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("28_6q07v")
+
+[node name="Cuerpo" type="Sprite2D" parent="Sprites/Apuntando" unique_id=1705548207]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 11)
+rotation = 3.1415927
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_gyxu7")
+
+[node name="ShootPoint" type="Marker2D" parent="Sprites/Apuntando/Cuerpo" unique_id=1156739804]
+position = Vector2(-38, 370)
+rotation = 1.5009831
+
+[node name="MuzzleFlash" type="Sprite2D" parent="Sprites/Apuntando/Cuerpo" unique_id=1096685105]
+visible = false
+texture_filter = 1
+position = Vector2(-21.66662, 506.66666)
+rotation = -0.10471982
+texture = ExtResource("30_evfkh")
+script = ExtResource("31_2m8qq")
+scale_variation = 0.3

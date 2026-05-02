@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var player: CharacterBody2D
+@export var player: RigidBody2D
 
 @export var left_wheels: Array[Sprite2D]
 @export var right_wheels: Array[Sprite2D]

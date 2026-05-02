@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://br361hnwj326f"]
+
+[ext_resource type="Script" uid="uid://di2uvp8tn68ek" path="res://Scripts/PelletTrail.gd" id="1_agyfy"]
+
+[node name="PelletTrail" type="Line2D" unique_id=1284641867]
+width = 1.0
+default_color = Color(0.65834004, 0.6583399, 0.6583399, 1)
+script = ExtResource("1_agyfy")
