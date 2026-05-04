@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://hcho762y43mi"]
+
+[ext_resource type="Script" uid="uid://duov5ugetjj7r" path="res://DraggableItem.gd" id="1_3s507"]
+[ext_resource type="Texture2D" uid="uid://cq3l63hy62ivd" path="res://Sprites/Inventario/Ammo.png" id="2_mht1t"]
+
+[node name="Item" type="Node2D" unique_id=1479029046]
+script = ExtResource("1_3s507")
+heal_sprite = ExtResource("2_mht1t")
+ammo_sprite = ExtResource("2_mht1t")
+shell_sprite = ExtResource("2_mht1t")
+key_sprite = ExtResource("2_mht1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428567622]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mht1t")

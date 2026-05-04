@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://wqah66tuporn"]
 
-[ext_resource type="Script" uid="uid://du68eixt2joti" path="res://Scripts/Physics.gd" id="1_aiqfs"]
-[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://Scripts/CameraShake.gd" id="2_oaevx"]
-[ext_resource type="Script" uid="uid://bwrgpeqotiqxo" path="res://Scripts/PlayerInput.gd" id="3_r63k2"]
-[ext_resource type="Script" uid="uid://bcotb6fnnn7fn" path="res://Scripts/ShootingManager.gd" id="4_ydufb"]
-[ext_resource type="PackedScene" uid="uid://br361hnwj326f" path="res://Prefabs/PelletTrail.tscn" id="5_cyxkj"]
-[ext_resource type="PackedScene" uid="uid://3uepbpmtegy5" path="res://Prefabs/Smoke.tscn" id="6_1nmkr"]
-[ext_resource type="Script" uid="uid://drir7fjgbs0af" path="res://Scripts/Animator.gd" id="7_lx8ag"]
+[ext_resource type="Script" uid="uid://du68eixt2joti" path="res://Scripts/Player/Physics.gd" id="1_aiqfs"]
+[ext_resource type="Script" uid="uid://bktxjq30qhy1v" path="res://Scripts/Effects/CameraShake.gd" id="2_oaevx"]
+[ext_resource type="Script" uid="uid://bwrgpeqotiqxo" path="res://Scripts/Player/PlayerInput.gd" id="3_r63k2"]
+[ext_resource type="Script" uid="uid://bcotb6fnnn7fn" path="res://Scripts/Shooting/ShootingManager.gd" id="4_ydufb"]
+[ext_resource type="PackedScene" uid="uid://br361hnwj326f" path="res://Prefabs/Shooting/PelletTrail.tscn" id="5_cyxkj"]
+[ext_resource type="PackedScene" uid="uid://3uepbpmtegy5" path="res://Prefabs/Shooting/Smoke.tscn" id="6_1nmkr"]
+[ext_resource type="Script" uid="uid://drir7fjgbs0af" path="res://Scripts/Player/Animator.gd" id="7_lx8ag"]
 [ext_resource type="Texture2D" uid="uid://2681pa7rvhb4" path="res://Sprites/Brazos/Izquierdo/BrazoI.png" id="8_7rfsf"]
 [ext_resource type="Texture2D" uid="uid://cxcfuxf2jdr1n" path="res://Sprites/Brazos/Izquierdo/BrazoI 1.png" id="9_6adx8"]
 [ext_resource type="Texture2D" uid="uid://bydy74d8iamuw" path="res://Sprites/Brazos/Izquierdo/BrazoI 2.png" id="10_ih8db"]
@@ -17,26 +17,26 @@
 [ext_resource type="Texture2D" uid="uid://65t4fofx6uyy" path="res://Sprites/Brazos/Derecho/BrazoD 2.png" id="15_bp2ap"]
 [ext_resource type="Texture2D" uid="uid://ckruief7wwxtg" path="res://Sprites/Brazos/Derecho/BrazoD 3.png" id="16_hq3ys"]
 [ext_resource type="Texture2D" uid="uid://b0d5g1hgx8ugk" path="res://Sprites/Brazos/Derecho/BrazoD 4.png" id="17_pnvvr"]
-[ext_resource type="Texture2D" uid="uid://bspsfegjx2gst" path="res://Sprites/Chasis.png" id="18_vukrh"]
-[ext_resource type="Texture2D" uid="uid://yxxjb46ddsyr" path="res://Sprites/Sombra.png" id="19_q58bx"]
-[ext_resource type="Script" uid="uid://drodctgb3kl5d" path="res://Scripts/WheelController.gd" id="20_gvgvh"]
+[ext_resource type="Texture2D" uid="uid://bspsfegjx2gst" path="res://Sprites/Personaje/Chasis.png" id="18_vukrh"]
+[ext_resource type="Texture2D" uid="uid://yxxjb46ddsyr" path="res://Sprites/Personaje/Sombra.png" id="19_q58bx"]
+[ext_resource type="Script" uid="uid://drodctgb3kl5d" path="res://Scripts/Player/WheelController.gd" id="20_gvgvh"]
 [ext_resource type="Texture2D" uid="uid://bhsks1xoncjeo" path="res://Sprites/Ruedas/Ruedas.png" id="21_15tmr"]
 [ext_resource type="Shader" uid="uid://ddpe54b6au5r3" path="res://Shaders/Wheel.gdshader" id="22_grebm"]
 [ext_resource type="Texture2D" uid="uid://domxo0xwv002v" path="res://Sprites/Ruedas/Rueda delantera.png" id="23_l3br1"]
 [ext_resource type="Texture2D" uid="uid://b6b4u7sls73xi" path="res://Sprites/Ruedas/Rueda trasera.png" id="24_s4q4h"]
-[ext_resource type="Texture2D" uid="uid://bja3w7no56i4r" path="res://Sprites/Cuerpo.png" id="25_cpsd3"]
-[ext_resource type="Texture2D" uid="uid://lnhlefi207jv" path="res://Sprites/Cabeza.png" id="26_ut812"]
+[ext_resource type="Texture2D" uid="uid://bja3w7no56i4r" path="res://Sprites/Personaje/Cuerpo.png" id="25_cpsd3"]
+[ext_resource type="Texture2D" uid="uid://lnhlefi207jv" path="res://Sprites/Personaje/Cabeza.png" id="26_ut812"]
 [ext_resource type="Texture2D" uid="uid://b637hs1a7j14h" path="res://Sprites/Escopeta/Escopeta.png" id="27_6aaad"]
 [ext_resource type="Texture2D" uid="uid://b223jftjhbxw" path="res://Sprites/Escopeta/Piernas escopeta.png" id="28_6q07v"]
 [ext_resource type="Texture2D" uid="uid://cttw3uv6y78fh" path="res://Sprites/Escopeta/Pose escopeta.png" id="29_gyxu7"]
-[ext_resource type="Texture2D" uid="uid://d2dyxfvlpotin" path="res://Sprites/Muzzle flash.png" id="30_evfkh"]
-[ext_resource type="Script" uid="uid://dq2jo656lx0yw" path="res://Scripts/MuzzleFlash.gd" id="31_2m8qq"]
+[ext_resource type="Texture2D" uid="uid://d2dyxfvlpotin" path="res://Sprites/Escopeta/Muzzle flash.png" id="30_evfkh"]
+[ext_resource type="Script" uid="uid://dq2jo656lx0yw" path="res://Scripts/Shooting/MuzzleFlash.gd" id="31_2m8qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0rpr"]
 size = Vector2(90, 120)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g012e"]
-radius = 250.0
+radius = 150.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oe0ta"]
 shader = ExtResource("22_grebm")
@@ -58,7 +58,7 @@ shader_parameter/offset = 0.0
 gravity_scale = 0.0
 linear_damp = 1.0
 script = ExtResource("1_aiqfs")
-forward_friction = 0.0
+max_speed = 1000.0
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=2135051937]
 script = ExtResource("2_oaevx")
@@ -66,7 +66,7 @@ shake_strength = 0.1
 
 [node name="PlayerInput" type="Node" parent="." unique_id=1314738972]
 script = ExtResource("3_r63k2")
-push_strength = 800.0
+push_strength = 700.0
 turn_strength = 150.0
 
 [node name="ShootingManager" type="Node" parent="." unique_id=948230773 node_paths=PackedStringArray("player", "player_input", "muzzle", "muzzle_flash", "animator")]
@@ -78,7 +78,6 @@ muzzle_flash = NodePath("../Sprites/Apuntando/Cuerpo/MuzzleFlash")
 animator = NodePath("../Sprites")
 pellet_count = 6
 spread_angle = 10.0
-recoil_force = 1000.0
 trail_scene = ExtResource("5_cyxkj")
 smoke_scene = ExtResource("6_1nmkr")
 
@@ -106,8 +105,6 @@ left_frames = Array[Texture2D]([ExtResource("8_7rfsf"), ExtResource("9_6adx8"), 
 right_frames = Array[Texture2D]([ExtResource("13_whi3v"), ExtResource("14_fe66y"), ExtResource("15_bp2ap"), ExtResource("16_hq3ys"), ExtResource("17_pnvvr")])
 torso_aim = NodePath("Apuntando/Cuerpo")
 cuerpo_sprite = NodePath("Apuntando/Cuerpo")
-recoil_distance = 15.0
-recoil_speed = 10.0
 
 [node name="Chasis" type="Sprite2D" parent="Sprites" unique_id=364317758]
 z_index = 1

@@ -21,11 +21,11 @@ extends Node2D
 @export var aim_reset_speed := 10.0
 
 # Shooting (visual recoil)
-@export var recoil_distance := 5.0
+@export var recoil_distance := 20.0
 @export var recoil_speed := 20.0
 
-# Arm smoothing
-@export var arm_lerp_speed := 12.0
+# Arm smoothing (ahora controla velocidad de transición)
+@export var arm_lerp_speed := 500.0
 
 var recoil_offset := 0.0
 
@@ -35,31 +35,25 @@ var right_arm_value := 0.0
 var dragging := false
 var was_aiming := false
 
-var base_torso_rotation := 0.0
-
-
-func _ready():
-	base_torso_rotation = torso_aim.global_rotation
-
 
 func _process(delta):
-	# Recoil update
+	# Recoil visual
 	recoil_offset = lerp(recoil_offset, 0.0, recoil_speed * delta)
 	cuerpo_sprite.offset.y = recoil_offset
 
-	# Visual state switching
+	# Cambio de estado visual
 	if player_input.is_aiming != was_aiming:
 		update_visual_state(player_input.is_aiming)
 		was_aiming = player_input.is_aiming
 
-	# Aiming mode
+	# AIMING
 	if player_input.is_aiming:
 		update_aiming(delta)
 		return
 	else:
 		reset_torso_rotation(delta)
 
-	# Movement mode
+	# MOVIMIENTO
 	if not dragging:
 		set_idle()
 		return
@@ -81,7 +75,7 @@ func _input(event):
 
 
 # =========================
-# Visual state management
+# Visual state
 # =========================
 func update_visual_state(is_aiming: bool):
 	movement_visuals.visible = not is_aiming
@@ -89,7 +83,7 @@ func update_visual_state(is_aiming: bool):
 
 
 # =========================
-# Aiming system
+# Aiming
 # =========================
 func update_aiming(delta):
 	var mouse_pos = player.get_global_mouse_position()
@@ -116,25 +110,28 @@ func update_aiming(delta):
 
 
 # =========================
-# Reset torso when not aiming
+# Reset torso
 # =========================
 func reset_torso_rotation(delta):
+	var forward_angle = player.global_rotation - PI / 2
+	var target_angle = forward_angle - PI / 2
+
 	torso_aim.global_rotation = lerp_angle(
 		torso_aim.global_rotation,
-		base_torso_rotation,
+		target_angle,
 		aim_reset_speed * delta
 	)
 
 
 # =========================
-# Shooting (visual recoil)
+# Recoil visual
 # =========================
 func apply_visual_recoil():
 	recoil_offset = -recoil_distance
 
 
 # =========================
-# Arm animation system
+# Arm animation
 # =========================
 func update_arms(delta):
 	var mouse_pos = player.get_global_mouse_position()
@@ -159,11 +156,14 @@ func update_arms(delta):
 		set_max_frames()
 		return
 
-	var left_value = forward_amount + turn_amount
-	var right_value = forward_amount - turn_amount
+	var left_target = forward_amount + turn_amount
+	var right_target = forward_amount - turn_amount
 
-	left_arm_value = lerp(left_arm_value, left_value, arm_lerp_speed * delta)
-	right_arm_value = lerp(right_arm_value, right_value, arm_lerp_speed * delta)
+	# 🔹 Movimiento progresivo (sin saltos)
+	var max_step = arm_lerp_speed * delta
+
+	left_arm_value = move_toward(left_arm_value, left_target, max_step)
+	right_arm_value = move_toward(right_arm_value, right_target, max_step)
 
 	set_arm_state(left_arm_value, left_arm, left_frames)
 	set_arm_state(right_arm_value, right_arm, right_frames)
@@ -195,6 +195,9 @@ func set_max_frames():
 # Utility
 # =========================
 func is_mouse_inside_input_area() -> bool:
+	if not player or not input_area:
+		return false
+
 	var space_state = player.get_world_2d().direct_space_state
 
 	var query := PhysicsPointQueryParameters2D.new()

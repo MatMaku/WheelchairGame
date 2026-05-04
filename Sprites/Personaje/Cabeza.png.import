@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lnhlefi207jv"
-path="res://.godot/imported/Cabeza.png-9436cee915537d6e8f0831c5450c7873.ctex"
+path="res://.godot/imported/Cabeza.png-0dd5acececefe9c5f180e3b7409820b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cabeza.png"
-dest_files=["res://.godot/imported/Cabeza.png-9436cee915537d6e8f0831c5450c7873.ctex"]
+source_file="res://Sprites/Personaje/Cabeza.png"
+dest_files=["res://.godot/imported/Cabeza.png-0dd5acececefe9c5f180e3b7409820b0.ctex"]
 
 [params]
 

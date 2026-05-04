@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bspsfegjx2gst"
-path="res://.godot/imported/Chasis.png-de9ab2b207bd73f0da8bf9a8d004ae57.ctex"
+uid="uid://cq3l63hy62ivd"
+path="res://.godot/imported/Ammo.png-8336c3a28c1593cf2a776cef0c823880.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Chasis.png"
-dest_files=["res://.godot/imported/Chasis.png-de9ab2b207bd73f0da8bf9a8d004ae57.ctex"]
+source_file="res://Sprites/Inventario/Ammo.png"
+dest_files=["res://.godot/imported/Ammo.png-8336c3a28c1593cf2a776cef0c823880.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bknx4mq30q2cw"]
 
-[ext_resource type="Script" uid="uid://dcglrby3nc5nl" path="res://Ramp.gd" id="1_cujdg"]
+[ext_resource type="Script" uid="uid://dcglrby3nc5nl" path="res://Scripts/Utility/Ramp.gd" id="1_cujdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po8xm"]
 size = Vector2(100, 200)
@@ -9,7 +9,6 @@ size = Vector2(100, 200)
 
 [node name="Ramp" type="Area2D" unique_id=545069195]
 script = ExtResource("1_cujdg")
-slope_strength = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743685323]
 shape = SubResource("RectangleShape2D_po8xm")
