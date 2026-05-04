@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://duhryuq1gv5m4"]
 
-[ext_resource type="Script" uid="uid://be1m234mf4wjm" path="res://InventorySystem.gd" id="1_vpi5q"]
+[ext_resource type="Script" uid="uid://be1m234mf4wjm" path="res://Scripts/Inventory/InventorySystem.gd" id="1_vpi5q"]
 [ext_resource type="PackedScene" uid="uid://hcho762y43mi" path="res://Prefabs/Item.tscn" id="2_0qhgx"]
 [ext_resource type="Script" uid="uid://brye83r6jny0q" path="res://Scripts/Inventory/ItemData.gd" id="3_14xdj"]
+[ext_resource type="Script" uid="uid://dysn55sric1l1" path="res://Scripts/Inventory/ShotgunUI.gd" id="4_4gjtp"]
+[ext_resource type="Texture2D" uid="uid://b72hsit2hpo20" path="res://Sprites/Inventario/Escopeta.png" id="4_ls41x"]
+[ext_resource type="Script" uid="uid://b5isetufoip6l" path="res://Scripts/Inventory/ShotgunSlot.gd" id="5_gvprd"]
 
 [sub_resource type="Resource" id="Resource_ls41x"]
 script = ExtResource("3_14xdj")
@@ -45,4 +48,43 @@ texture = SubResource("CanvasTexture_14xdj")
 
 [node name="ItemsContainer" type="Node2D" parent="Root" unique_id=1435740336]
 
+[node name="ShotgunUI" type="Node2D" parent="Root" unique_id=604045850]
+z_index = -1
+script = ExtResource("4_4gjtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Root/ShotgunUI" unique_id=610984265]
+z_index = -1
+position = Vector2(1647, 779)
+texture = ExtResource("4_ls41x")
+
+[node name="InteractionArea" type="Control" parent="Root/ShotgunUI" unique_id=985605634]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1457.0001
+offset_top = 463.99997
+offset_right = 1777.0001
+offset_bottom = 694.0
+rotation = -0.10471976
+
+[node name="Slot1" type="Control" parent="Root/ShotgunUI" unique_id=286909626]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1527.0
+offset_top = 549.0
+offset_right = 1587.0
+offset_bottom = 609.0
+script = ExtResource("5_gvprd")
+
+[node name="Slot2" type="Control" parent="Root/ShotgunUI" unique_id=401313701]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1665.0
+offset_top = 532.0
+offset_right = 1725.0
+offset_bottom = 592.0
+script = ExtResource("5_gvprd")
+
 [node name="DragLayer" type="Node2D" parent="Root" unique_id=1551065945]
+z_index = 6
