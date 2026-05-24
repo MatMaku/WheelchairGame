@@ -7,9 +7,8 @@
 [node name="Item" type="Node2D" unique_id=1479029046]
 script = ExtResource("1_3s507")
 collision_size = Vector2(50, 50)
-ammo_sprite = ExtResource("2_mht1t")
-shell_sprite = ExtResource("2_mht1t")
-ammo_side_sprite = ExtResource("3_mf20m")
+ammo_new_side_sprite = ExtResource("3_mf20m")
+ammo_new_front_sprite = ExtResource("2_mht1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428567622]
 texture = ExtResource("3_mf20m")

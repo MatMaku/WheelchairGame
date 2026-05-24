@@ -1,33 +1,59 @@
 extends Control
+class_name ShotgunSlot
 
-@export var accepted_type := ItemData.ItemType.AMMO
+@export var accepted_type: ItemData.ItemType = ItemData.ItemType.AMMO
 
 var current_item: Node2D = null
 
 
+# --- State ---
 func is_empty() -> bool:
 	return current_item == null
 
 
+func contains_item(item: Node2D) -> bool:
+	return current_item == item
+
+
+# --- Rules ---
 func can_accept(item: Node2D) -> bool:
-	return is_empty() and item.item_type == accepted_type
+	return is_empty() and ("item_type" in item) and item.item_type == accepted_type
 
 
-func insert_item(item: Node2D):
+# --- Actions ---
+func insert_item(item: Node2D) -> void:
 	current_item = item
 
-	var rect = get_global_rect()
-	var center = rect.position + rect.size * 0.5
-
-	item.global_position = center
+	var rect := get_global_rect()
+	item.global_position = rect.position + rect.size * 0.5
 
 	if item.has_method("set_in_slot"):
 		item.set_in_slot(true)
 
 
-func is_item_overlapping(item: Node2D) -> bool:
-	if item.inventory_system:
-		var item_rect = item.inventory_system.get_item_logic_rect(item)
-		return get_global_rect().intersects(item_rect)
+func remove_item() -> Node2D:
+	var item := current_item
+	current_item = null
 
-	return false
+	if item and item.has_method("set_in_slot"):
+		item.set_in_slot(false)
+
+	return item
+
+
+# --- Overlap ---
+func is_item_overlapping(item: Node2D) -> bool:
+	return get_global_rect().intersects(_get_item_logic_rect(item))
+
+
+func _get_item_logic_rect(item: Node2D) -> Rect2:
+	if "collision_size" in item:
+		var size: Vector2 = item.collision_size
+		return Rect2(item.global_position - size * 0.5, size)
+
+	var sprite := item.get_node_or_null("Sprite2D") as Sprite2D
+	if sprite and sprite.texture:
+		var size2 := sprite.texture.get_size() * sprite.scale
+		return Rect2(item.global_position - size2 * 0.5, size2)
+
+	return Rect2(item.global_position, Vector2.ZERO)
