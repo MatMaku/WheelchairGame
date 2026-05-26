@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://duov5ugetjj7r" path="res://Scripts/Inventory/DraggableItem.gd" id="1_3s507"]
 [ext_resource type="Texture2D" uid="uid://cq3l63hy62ivd" path="res://Sprites/Inventario/Ammo.png" id="2_mht1t"]
 [ext_resource type="Texture2D" uid="uid://bp8tne3cgku1w" path="res://Sprites/Inventario/Ammo front.png" id="3_mf20m"]
+[ext_resource type="Texture2D" uid="uid://dqytj40coosvd" path="res://Sprites/Inventario/Ammo used.png" id="4_1g28m"]
+[ext_resource type="Texture2D" uid="uid://b08l7wvbxxuq2" path="res://Sprites/Inventario/Ammo front used.png" id="5_4jbnu"]
 
 [node name="Item" type="Node2D" unique_id=1479029046]
 script = ExtResource("1_3s507")
 collision_size = Vector2(50, 50)
-ammo_new_side_sprite = ExtResource("3_mf20m")
 ammo_new_front_sprite = ExtResource("2_mht1t")
+ammo_new_side_sprite = ExtResource("3_mf20m")
+ammo_empty_front_sprite = ExtResource("4_1g28m")
+ammo_empty_side_sprite = ExtResource("5_4jbnu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428567622]
 texture = ExtResource("3_mf20m")

@@ -5,7 +5,6 @@ class_name ShotgunUI
 var slots: Array[ShotgunSlot] = []
 
 
-# --- Lifecycle ---
 func _ready() -> void:
 	slots.clear()
 	for child in get_children():
@@ -17,14 +16,21 @@ func _ready() -> void:
 func is_item_in_interaction_area(item: Node2D) -> bool:
 	return interaction_area.get_global_rect().intersects(_get_item_logic_rect(item))
 
+func get_loaded_new_ammo_count() -> int:
+	var count := 0
+	for slot in slots:
+		if slot.has_new_ammo_loaded():
+			count += 1
+	return count
 
+
+# --- Insert / Drag ---
 func try_insert_item(item: Node2D) -> bool:
 	for slot in slots:
 		if slot.can_accept(item) and slot.is_item_overlapping(item):
 			slot.insert_item(item)
 			return true
 	return false
-
 
 func on_item_drag_started(item: Node2D) -> void:
 	for slot in slots:
@@ -33,7 +39,17 @@ func on_item_drag_started(item: Node2D) -> void:
 			return
 
 
-# --- Rect helpers (fallback si no hay inventory_system) ---
+# --- Fire ---
+func fire_once() -> bool:
+	for slot in slots:
+		var ammo := slot.get_loaded_ammo()
+		if ammo != null and ammo.is_ammo_new():
+			ammo.set_ammo_state(ItemData.AmmoState.EMPTY)
+			return true
+	return false
+
+
+# --- Rect helper ---
 func _get_item_logic_rect(item: Node2D) -> Rect2:
 	if "collision_size" in item:
 		var size: Vector2 = item.collision_size

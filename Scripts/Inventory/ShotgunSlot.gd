@@ -10,14 +10,29 @@ var current_item: Node2D = null
 func is_empty() -> bool:
 	return current_item == null
 
-
 func contains_item(item: Node2D) -> bool:
 	return current_item == item
+
+func get_loaded_ammo() -> DraggableItem:
+	return current_item as DraggableItem
+
+func has_new_ammo_loaded() -> bool:
+	var a := get_loaded_ammo()
+	return a != null and a.is_ammo_new()
 
 
 # --- Rules ---
 func can_accept(item: Node2D) -> bool:
-	return is_empty() and ("item_type" in item) and item.item_type == accepted_type
+	if not is_empty():
+		return false
+	if not ("item_type" in item) or item.item_type != accepted_type:
+		return false
+
+	var di := item as DraggableItem
+	if di != null and di.item_type == ItemData.ItemType.AMMO:
+		return di.is_ammo_new() # NO aceptar EMPTY
+
+	return true
 
 
 # --- Actions ---
@@ -29,7 +44,6 @@ func insert_item(item: Node2D) -> void:
 
 	if item.has_method("set_in_slot"):
 		item.set_in_slot(true)
-
 
 func remove_item() -> Node2D:
 	var item := current_item
@@ -44,7 +58,6 @@ func remove_item() -> Node2D:
 # --- Overlap ---
 func is_item_overlapping(item: Node2D) -> bool:
 	return get_global_rect().intersects(_get_item_logic_rect(item))
-
 
 func _get_item_logic_rect(item: Node2D) -> Rect2:
 	if "collision_size" in item:
