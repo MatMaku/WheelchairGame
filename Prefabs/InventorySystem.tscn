@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dysn55sric1l1" path="res://Scripts/Inventory/ShotgunUI.gd" id="4_4gjtp"]
 [ext_resource type="Script" uid="uid://c4imhqmtiltog" path="res://Scripts/Inventory/DragController.gd" id="4_a3akl"]
 [ext_resource type="Texture2D" uid="uid://b72hsit2hpo20" path="res://Sprites/Inventario/Escopeta.png" id="4_ls41x"]
-[ext_resource type="Script" uid="uid://da5hq5h165a5h" path="res://Scripts/Inventory/ShotgunFireSimulator.gd" id="4_tfk5v"]
 [ext_resource type="Script" uid="uid://b5isetufoip6l" path="res://Scripts/Inventory/ShotgunSlot.gd" id="5_gvprd"]
 
 [sub_resource type="Resource" id="Resource_tfk5v"]
@@ -28,11 +27,8 @@ metadata/_custom_type_script = "uid://brye83r6jny0q"
 
 [node name="InventorySystem" type="CanvasLayer" unique_id=2001492997]
 script = ExtResource("1_vpi5q")
-max_items = null
 item_scene = ExtResource("2_0qhgx")
 initial_items = Array[ExtResource("3_14xdj")]([SubResource("Resource_tfk5v"), SubResource("Resource_wpmih"), SubResource("Resource_pyu7q")])
-separation_distance = null
-separation_speed = null
 
 [node name="Root" type="Control" parent="." unique_id=1205088097]
 layout_mode = 3
@@ -42,28 +38,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="ShootSimulator" type="Node" parent="Root" unique_id=1052984444 node_paths=PackedStringArray("shotgun_ui", "shoot_button", "loaded_label")]
-script = ExtResource("4_tfk5v")
-shotgun_ui = NodePath("../ShotgunUI")
-shoot_button = NodePath("ShootButton")
-loaded_label = NodePath("Label")
-
-[node name="ShootButton" type="Button" parent="Root/ShootSimulator" unique_id=380415345]
-offset_left = 1594.0
-offset_top = 31.0
-offset_right = 1773.0
-offset_bottom = 74.0
-text = "SHOOT"
-
-[node name="Label" type="Label" parent="Root/ShootSimulator" unique_id=1021004039]
-offset_left = 1642.0
-offset_top = 81.0
-offset_right = 1726.0
-offset_bottom = 136.0
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="DragController" type="Node" parent="Root" unique_id=1029692062 node_paths=PackedStringArray("inventory_system", "shotgun_ui", "drag_layer", "items_container")]
 script = ExtResource("4_a3akl")

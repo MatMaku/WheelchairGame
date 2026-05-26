@@ -6,6 +6,8 @@ var slots: Array[ShotgunSlot] = []
 
 
 func _ready() -> void:
+	add_to_group("shotgun_ui")
+
 	slots.clear()
 	for child in get_children():
 		if child is ShotgunSlot:

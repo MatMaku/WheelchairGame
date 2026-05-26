@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bvh32folc0ubi"]
 
+[ext_resource type="PackedScene" uid="uid://duhryuq1gv5m4" path="res://Prefabs/InventorySystem.tscn" id="1_aq4fw"]
+[ext_resource type="Script" uid="uid://bgqpsiao77y86" path="res://Scripts/Inventory/InventoryManager.gd" id="1_ivycn"]
 [ext_resource type="Texture2D" uid="uid://b7x7edk6yyuft" path="res://icon.svg" id="2_2au82"]
 [ext_resource type="PackedScene" uid="uid://3pscl2fldgud" path="res://Prefabs/Noise.tscn" id="3_2au82"]
 [ext_resource type="PackedScene" uid="uid://wqah66tuporn" path="res://Prefabs/Player.tscn" id="3_8tn2x"]
@@ -9,6 +11,14 @@
 size = Vector2(200, 200)
 
 [node name="Test" type="Node2D" unique_id=447278991]
+
+[node name="InventorySystem" parent="." unique_id=2001492997 instance=ExtResource("1_aq4fw")]
+
+[node name="InventoryManager" type="Node" parent="." unique_id=1711958447 node_paths=PackedStringArray("inventory", "player_input", "shooting_manager")]
+script = ExtResource("1_ivycn")
+inventory = NodePath("../InventorySystem")
+player_input = NodePath("../Player")
+shooting_manager = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=610006283 instance=ExtResource("3_8tn2x")]
 position = Vector2(429, 189)
