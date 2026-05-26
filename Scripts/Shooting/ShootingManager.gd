@@ -93,7 +93,7 @@ func fire_pellet(space_state, base_dir: Vector2) -> void:
 	var to = from + dir * max_distance
 
 	var query := PhysicsRayQueryParameters2D.create(from, to)
-	query.collide_with_areas = true
+	query.collide_with_areas = false
 	query.collide_with_bodies = true
 
 	var result = space_state.intersect_ray(query)

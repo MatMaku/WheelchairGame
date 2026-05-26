@@ -28,7 +28,8 @@ offset_top = 100.000015
 offset_right = 187.66669
 offset_bottom = 123.000015
 rotation = -1.5707964
-text = "> > > > > > > > > > > >"
+text = "> > > > > > > > > > > >
+Rampa"
 label_settings = SubResource("LabelSettings_cujdg")
 horizontal_alignment = 1
 vertical_alignment = 1

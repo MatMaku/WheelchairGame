@@ -20,6 +20,7 @@ var dragged_item: Node2D = null
 
 # --- Lifecycle ---
 func _ready() -> void:
+	add_to_group("inventory_system")
 	_spawn_initial_items()
 
 

@@ -14,11 +14,10 @@ size = Vector2(200, 200)
 
 [node name="InventorySystem" parent="." unique_id=2001492997 instance=ExtResource("1_aq4fw")]
 
-[node name="InventoryManager" type="Node" parent="." unique_id=1711958447 node_paths=PackedStringArray("inventory", "player_input", "shooting_manager")]
+[node name="InventoryManager" type="Node" parent="." unique_id=1711958447 node_paths=PackedStringArray("inventory")]
 script = ExtResource("1_ivycn")
 inventory = NodePath("../InventorySystem")
-player_input = NodePath("../Player")
-shooting_manager = NodePath("../Player")
+block_player_input = true
 
 [node name="Player" parent="." unique_id=610006283 instance=ExtResource("3_8tn2x")]
 position = Vector2(429, 189)
