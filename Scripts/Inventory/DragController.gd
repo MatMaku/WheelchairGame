@@ -12,8 +12,15 @@ var drag_offset: Vector2 = Vector2.ZERO
 var drag_started_from_shotgun := false
 var shotgun_lock_until_exit := false
 
+var _hovering_item := false
+
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Hover cursor cuando NO estás arrastrando
+	if event is InputEventMouseMotion and current_item == null:
+		_update_hover_cursor()
+		return
+
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			_try_start_drag()
@@ -29,6 +36,11 @@ func _mouse_pos() -> Vector2:
 	return get_viewport().get_mouse_position()
 
 
+func _inventory_active() -> bool:
+	return is_instance_valid(inventory_system) and inventory_system.visible and is_processing_unhandled_input()
+
+
+# --- Drag ---
 func _try_start_drag() -> void:
 	if current_item:
 		return
@@ -51,6 +63,10 @@ func _try_start_drag() -> void:
 	current_item = item
 	drag_offset = current_item.global_position - _mouse_pos()
 
+	Mouse_Manager.set_dragging(true)
+	Mouse_Manager.set_hover_interactable(true)
+	_hovering_item = true
+
 	if is_instance_valid(inventory_system):
 		inventory_system.set_dragged_item(current_item)
 
@@ -59,12 +75,10 @@ func _try_start_drag() -> void:
 
 	var di := current_item as DraggableItem
 	if di != null and di.is_ammo_empty():
-		# EMPTY: al agarrar, queremos front (no side) y no volver a side durante drag
 		if di.has_method("set_in_shotgun_area"):
 			di.set_in_shotgun_area(false)
 			reset_drag_offset_for(di)
 	else:
-		# NEW ammo desde shotgun: mantener side mientras esté dentro (anti-flicker)
 		if drag_started_from_shotgun:
 			shotgun_lock_until_exit = true
 			if current_item.has_method("set_in_shotgun_area"):
@@ -80,7 +94,6 @@ func _update_drag() -> void:
 
 	var di := current_item as DraggableItem
 	if di != null and di.is_ammo_empty():
-		# EMPTY: no tocamos set_in_shotgun_area acá para no recenter cada frame
 		return
 
 	if not is_instance_valid(shotgun_ui):
@@ -110,6 +123,8 @@ func _end_drag() -> void:
 	drag_started_from_shotgun = false
 	shotgun_lock_until_exit = false
 
+	Mouse_Manager.set_dragging(false)
+
 	if is_instance_valid(inventory_system):
 		inventory_system.set_dragged_item(null)
 
@@ -118,12 +133,12 @@ func _end_drag() -> void:
 
 	var di := item as DraggableItem
 	if di != null and di.is_ammo_empty():
-		# IMPORTANTE: sacarlo del layout del inventario antes de animar la caída
 		if is_instance_valid(inventory_system):
-			inventory_system.on_item_moved_to_shotgun(item) # solo para desregistrar (no lo reparenta)
+			inventory_system.on_item_moved_to_shotgun(item)
 		item.reparent(drag_layer)
 		item.z_index = 1000
 		di.start_discard_fall()
+		_update_hover_cursor()
 		return
 
 	if is_instance_valid(shotgun_ui) and shotgun_ui.try_insert_item(item):
@@ -131,6 +146,7 @@ func _end_drag() -> void:
 			inventory_system.on_item_moved_to_shotgun(item)
 		item.reparent(shotgun_ui)
 		item.z_index = 0
+		_update_hover_cursor()
 		return
 
 	if is_instance_valid(shotgun_ui) and shotgun_ui.is_item_in_interaction_area(item):
@@ -139,6 +155,7 @@ func _end_drag() -> void:
 		if is_instance_valid(inventory_system):
 			inventory_system.on_item_dropped_inside(item)
 		item.z_index = 0
+		_update_hover_cursor()
 		return
 
 	item.reparent(items_container)
@@ -147,7 +164,31 @@ func _end_drag() -> void:
 		inventory_system.on_item_drop_finished(item)
 	item.z_index = 0
 
+	_update_hover_cursor()
 
+
+# --- Cursor hover ---
+func _update_hover_cursor() -> void:
+	# Solo controlamos cursor de inventario si el inventario está activo/visible
+	if not _inventory_active():
+		if _hovering_item:
+			_hovering_item = false
+			Mouse_Manager.set_hover_interactable(false)
+		return
+
+	var hovered := false
+
+	if is_instance_valid(inventory_system) and inventory_system.pick_item_at_mouse() != null:
+		hovered = true
+	elif is_instance_valid(shotgun_ui) and _pick_draggable_in_tree(shotgun_ui) != null:
+		hovered = true
+
+	if hovered != _hovering_item:
+		_hovering_item = hovered
+		Mouse_Manager.set_hover_interactable(hovered)
+
+
+# --- Utils ---
 func reset_drag_offset_for(item: Node2D) -> void:
 	if item != current_item:
 		return

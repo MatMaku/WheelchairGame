@@ -78,9 +78,6 @@ muzzle_flash = NodePath("../Sprites/Apuntando/Cuerpo/MuzzleFlash")
 animator = NodePath("../Sprites")
 pellet_count = 6
 spread_angle = 10.0
-max_distance = null
-recoil_force = null
-fire_rate = null
 trail_scene = ExtResource("5_cyxkj")
 smoke_scene = ExtResource("6_1nmkr")
 

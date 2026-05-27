@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://wh3fbtee2fc5"]
+
+[ext_resource type="Script" uid="uid://cqwnbhyi7kso6" path="res://Scripts/Utility/MouseManager.gd" id="1_d53tv"]
+[ext_resource type="Texture2D" uid="uid://5wb36hsi2gbh" path="res://Sprites/Cursor/Cursor Abierto.png" id="2_4agwn"]
+[ext_resource type="Texture2D" uid="uid://clsm8jmycuj1t" path="res://Sprites/Cursor/Cursor Default.png" id="2_i4ous"]
+[ext_resource type="Texture2D" uid="uid://bjw7ab5fno0ty" path="res://Sprites/Cursor/Cursor Agarrando.png" id="3_i4ous"]
+
+[node name="MouseManager" type="Node" unique_id=1623266658]
+script = ExtResource("1_d53tv")
+default_cursor = ExtResource("2_i4ous")
+hand_open = ExtResource("2_4agwn")
+hand_closed = ExtResource("3_i4ous")
+metadata/_custom_type_script = "uid://cqwnbhyi7kso6"
